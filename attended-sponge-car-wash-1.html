@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attended Sponge Car Wash | Premium Hand Car Wash & Valeting in Greenhills, Dublin</title>
+<meta name="description" content="Attended Sponge Car Wash — premium hand car wash and valeting in Greenhills, Dublin. Exterior wash, interior valeting, wax protection, ceramic coating. Open 7 days. Call +353 89 474 2701.">
+<meta name="keywords" content="car wash Dublin, car wash Greenhills, hand car wash Dublin, valeting Dublin, ceramic coating Dublin, mobile car wash Dublin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://attendedspongecarwash.ie/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Attended Sponge Car Wash | Premium Hand Car Wash in Greenhills, Dublin">
+<meta property="og:description" content="Professional exterior and interior cleaning with premium products and attention to detail. Open 7 days.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0a0b0d',
+          charcoal: '#15171b',
+          slate: '#1f2328',
+          smoke: '#2a2f35',
+          mist: '#9aa3ab',
+          emerald: {
+            DEFAULT: '#059669',
+            bright: '#10d492',
+            deep: '#04543d',
+          }
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        boxShadow: {
+          glow: '0 0 40px -8px rgba(16, 212, 146, 0.45)',
+          card: '0 10px 40px -12px rgba(0,0,0,0.6)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #0a0b0d; }
+  ::selection { background: #10d492; color: #0a0b0d; }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0a0b0d; }
+  ::-webkit-scrollbar-thumb { background: #1f2328; border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: #059669; }
+
+  .glass {
+    background: rgba(21, 23, 27, 0.55);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .sheen-line {
+    background: linear-gradient(90deg, transparent, #10d492 45%, #10d492 55%, transparent);
+    height: 2px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #ffffff 20%, #10d492 60%, #059669 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(.21,.6,.35,1), transform 0.8s cubic-bezier(.21,.6,.35,1);
+  }
+  .fade-up.in-view { opacity: 1; transform: translateY(0); }
+
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, #059669, #10d492);
+    z-index: 60; transition: width 0.1s linear;
+  }
+
+  .navlink { position: relative; }
+  .navlink::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0%;
+    background: #10d492; transition: width 0.3s ease;
+  }
+  .navlink:hover::after { width: 100%; }
+
+  .service-card, .price-card, .gallery-item, .review-card { transition: transform 0.45s cubic-bezier(.21,.8,.35,1), box-shadow 0.45s ease, border-color .4s ease; }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px -15px rgba(16,212,146,0.25); border-color: rgba(16,212,146,0.4); }
+  .price-card:hover { transform: translateY(-6px); }
+  .gallery-item { overflow: hidden; }
+  .gallery-item img { transition: transform 0.7s ease, filter 0.7s ease; }
+  .gallery-item:hover img { transform: scale(1.12); filter: brightness(1.05); }
+
+  .badge-dot { box-shadow: 0 0 0 4px rgba(16,212,146,0.15); }
+
+  #loader {
+    position: fixed; inset: 0; background: #0a0b0d; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  .spinner {
+    width: 54px; height: 54px; border-radius: 9999px;
+    border: 3px solid rgba(255,255,255,0.08);
+    border-top-color: #10d492;
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .whatsapp-float { animation: floatPulse 2.6s ease-in-out infinite; }
+  @keyframes floatPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .counter { font-variant-numeric: tabular-nums; }
+
+  .lightbox-open { overflow: hidden; }
+
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #10d492; outline-offset: 2px;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "Attended Sponge Car Wash",
+  "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+  "telephone": "+353894742701",
+  "priceRange": "€10-€60",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Greenhills",
+    "addressRegion": "Dublin",
+    "addressCountry": "IE"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "186"
+  }
+}
+</script>
+</head>
+
+<body class="font-body bg-ink text-white antialiased">
+
+<!-- Loader -->
+<div id="loader" aria-hidden="true">
+  <div class="spinner"></div>
+</div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress"></div>
+
+<!-- Sticky mobile call bar -->
+<a href="tel:+353894742701" class="fixed bottom-0 left-0 right-0 z-40 md:hidden flex items-center justify-center gap-2 bg-emerald-bright text-ink font-display font-bold py-3.5 shadow-[0_-6px_20px_rgba(0,0,0,0.4)]">
+  <i class="fa-solid fa-phone"></i> Call Now — +353 89 474 2701
+</a>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/353894742701" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="whatsapp-float fixed right-5 bottom-24 md:bottom-8 z-40 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-2xl text-white shadow-2xl hover:scale-110 transition-transform">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Back to top -->
+<button id="backToTop" aria-label="Back to top"
+  class="fixed right-5 bottom-40 md:bottom-8 md:right-24 z-40 w-11 h-11 rounded-full glass text-emerald-bright flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:border-emerald-bright">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- NAV -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4 transition-all duration-500" id="navInner">
+    <a href="#home" class="flex items-center gap-2.5 group">
+      <span class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald to-emerald-bright flex items-center justify-center shadow-glow">
+        <i class="fa-solid fa-car-side text-ink text-sm"></i>
+      </span>
+      <span class="font-display font-bold tracking-tight text-lg leading-none">
+        ATTENDED SPONGE
+        <span class="block text-[10px] tracking-[0.25em] text-emerald-bright font-body font-semibold">CAR WASH · DUBLIN</span>
+      </span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-mist">
+      <li><a href="#about" class="navlink hover:text-white transition-colors">About</a></li>
+      <li><a href="#services" class="navlink hover:text-white transition-colors">Services</a></li>
+      <li><a href="#pricing" class="navlink hover:text-white transition-colors">Pricing</a></li>
+      <li><a href="#gallery" class="navlink hover:text-white transition-colors">Gallery</a></li>
+      <li><a href="#reviews" class="navlink hover:text-white transition-colors">Reviews</a></li>
+      <li><a href="#contact" class="navlink hover:text-white transition-colors">Contact</a></li>
+    </ul>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:+353894742701" class="text-sm font-semibold text-white hover:text-emerald-bright transition-colors flex items-center gap-2">
+        <i class="fa-solid fa-phone text-emerald-bright"></i> +353 89 474 2701
+      </a>
+      <a href="#booking" class="rounded-full bg-emerald-bright text-ink font-display font-bold text-sm px-5 py-2.5 hover:bg-white transition-colors shadow-glow">
+        Book Now
+      </a>
+    </div>
+
+    <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center text-white" aria-label="Open menu" aria-expanded="false">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden glass mx-4 rounded-2xl px-6 py-6 mb-3 hidden">
+    <ul class="flex flex-col gap-4 text-base font-medium">
+      <li><a href="#about" class="mobile-link block">About</a></li>
+      <li><a href="#services" class="mobile-link block">Services</a></li>
+      <li><a href="#pricing" class="mobile-link block">Pricing</a></li>
+      <li><a href="#gallery" class="mobile-link block">Gallery</a></li>
+      <li><a href="#reviews" class="mobile-link block">Reviews</a></li>
+      <li><a href="#contact" class="mobile-link block">Contact</a></li>
+      <li><a href="#booking" class="mobile-link block bg-emerald-bright text-ink font-display font-bold text-center rounded-full py-3 mt-2">Book Now</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-[100svh] flex items-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1920&q=80"
+         alt="Luxury car being hand washed with foam in Dublin"
+         class="w-full h-full object-cover" loading="eager">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-32 pb-20 w-full">
+    <div class="max-w-2xl fade-up in-view">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide text-emerald-bright mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-bright badge-dot"></span>
+        GREENHILLS, DUBLIN — OPEN 7 DAYS
+      </div>
+
+      <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight">
+        Premium Hand Car Wash
+        <span class="text-gradient block">&amp; Valeting in Dublin</span>
+      </h1>
+
+      <p class="mt-6 text-lg text-mist max-w-lg leading-relaxed">
+        Professional exterior and interior cleaning with premium products and meticulous attention to detail — every vehicle, every visit.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#booking" class="text-center rounded-full bg-emerald-bright text-ink font-display font-bold px-8 py-4 hover:bg-white transition-all shadow-glow hover:-translate-y-0.5">
+          Book Now <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+        <a href="tel:+353894742701" class="text-center rounded-full glass border border-white/15 px-8 py-4 font-display font-bold hover:border-emerald-bright transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-emerald-bright"></i> Call Now
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="fade-up glass rounded-xl px-4 py-4 flex flex-col items-center text-center gap-2">
+          <i class="fa-solid fa-calendar-check text-emerald-bright text-xl"></i>
+          <span class="text-xs font-semibold text-mist">Open 7 Days</span>
+        </div>
+        <div class="fade-up glass rounded-xl px-4 py-4 flex flex-col items-center text-center gap-2">
+          <i class="fa-solid fa-pump-soap text-emerald-bright text-xl"></i>
+          <span class="text-xs font-semibold text-mist">Premium Products</span>
+        </div>
+        <div class="fade-up glass rounded-xl px-4 py-4 flex flex-col items-center text-center gap-2">
+          <i class="fa-solid fa-users text-emerald-bright text-xl"></i>
+          <span class="text-xs font-semibold text-mist">Experienced Staff</span>
+        </div>
+        <div class="fade-up glass rounded-xl px-4 py-4 flex flex-col items-center text-center gap-2">
+          <i class="fa-solid fa-bolt text-emerald-bright text-xl"></i>
+          <span class="text-xs font-semibold text-mist">Fast Service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-mist text-xs">
+    <span class="tracking-widest">SCROLL</span>
+    <i class="fa-solid fa-chevron-down animate-bounce"></i>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="relative bg-charcoal border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="fade-up text-center">
+      <div class="font-display font-bold text-3xl md:text-4xl text-emerald-bright"><span class="counter" data-target="8500">0</span>+</div>
+      <div class="text-xs md:text-sm text-mist mt-1">Cars Washed</div>
+    </div>
+    <div class="fade-up text-center">
+      <div class="font-display font-bold text-3xl md:text-4xl text-emerald-bright"><span class="counter" data-target="48" data-decimal="1">0</span></div>
+      <div class="text-xs md:text-sm text-mist mt-1">Average Rating</div>
+    </div>
+    <div class="fade-up text-center">
+      <div class="font-display font-bold text-3xl md:text-4xl text-emerald-bright"><span class="counter" data-target="7">0</span></div>
+      <div class="text-xs md:text-sm text-mist mt-1">Days a Week Open</div>
+    </div>
+    <div class="fade-up text-center">
+      <div class="font-display font-bold text-3xl md:text-4xl text-emerald-bright"><span class="counter" data-target="15">0</span>min</div>
+      <div class="text-xs md:text-sm text-mist mt-1">Average Wash Time</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="relative py-24 md:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="fade-up relative order-2 lg:order-1">
+      <div class="rounded-3xl overflow-hidden shadow-card border border-white/10">
+        <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=80"
+             alt="Staff member hand drying a car exterior with a microfibre cloth" class="w-full h-[420px] object-cover" loading="lazy">
+      </div>
+      <div class="absolute -bottom-6 -right-4 sm:-right-8 glass rounded-2xl p-5 max-w-[220px] shadow-card">
+        <div class="flex items-center gap-1 text-emerald-bright mb-1">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p class="text-sm font-semibold">4.8/5 from 180+ Dublin drivers</p>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Our Story</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-6 leading-tight">
+        Built on hand-washing, scratch-free care, and Dublin's trust
+      </h2>
+      <p class="text-mist leading-relaxed mb-4">
+        Attended Sponge Car Wash started in Greenhills with one goal: give Dublin drivers the kind of care their car actually deserves. No automated brushes, no rushed jobs — just a dedicated team, soft microfibre tools, and pH-balanced premium products used correctly, every single time.
+      </p>
+      <p class="text-mist leading-relaxed mb-8">
+        Every wash is done entirely by hand using scratch-free techniques, so your paintwork stays protected wash after wash. Our friendly, experienced staff treat every car — from the family hatchback to the weekend supercar — with the same level of attention to detail.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-hand-sparkles text-emerald-bright mt-1"></i>
+          <span class="text-sm text-mist"><strong class="text-white block">Hand Washing</strong>Every panel washed by hand, not machine.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-shield-halved text-emerald-bright mt-1"></i>
+          <span class="text-sm text-mist"><strong class="text-white block">Scratch-Free</strong>Soft-touch techniques that protect paint.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-face-smile text-emerald-bright mt-1"></i>
+          <span class="text-sm text-mist"><strong class="text-white block">Friendly Staff</strong>Local team who know your car.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-flask text-emerald-bright mt-1"></i>
+          <span class="text-sm text-mist"><strong class="text-white block">Premium Products</strong>Salon-grade chemicals & wax.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="relative py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">What We Offer</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Services built for every kind of car</h2>
+      <div class="sheen-line w-24 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Service card template -->
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-car text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Exterior Wash</h3>
+        <p class="text-sm text-mist leading-relaxed">Hand wash, foam bath, and rinse leaving your bodywork spotless and streak-free.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-couch text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Interior Valeting</h3>
+        <p class="text-sm text-mist leading-relaxed">Deep vacuum, upholstery clean, and dashboard detail for a fresh cabin every time.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-shield text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Wax Protection</h3>
+        <p class="text-sm text-mist leading-relaxed">Premium wax layer that protects paint and adds a deep, long-lasting shine.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-broom text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Mini Valet</h3>
+        <p class="text-sm text-mist leading-relaxed">A quick refresh — exterior wash plus a light interior tidy-up, done fast.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-gem text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Full Valet</h3>
+        <p class="text-sm text-mist leading-relaxed">Our complete top-to-bottom treatment — inside, outside, and everywhere between.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-taxi text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Taxi Wash</h3>
+        <p class="text-sm text-mist leading-relaxed">Fast-turnaround washes designed around a taxi driver's schedule.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-circle-dot text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Tyre Shine</h3>
+        <p class="text-sm text-mist leading-relaxed">Deep-black, long-lasting tyre dressing that finishes the look off right.</p>
+      </div>
+
+      <div class="service-card fade-up rounded-2xl border border-white/10 bg-slate/60 p-7">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep flex items-center justify-center mb-5">
+          <i class="fa-solid fa-shield-heart text-white"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg mb-2">Ceramic Protection</h3>
+        <p class="text-sm text-mist leading-relaxed">Long-term hydrophobic coating for maximum shine and paint protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Pricing</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Simple, honest packages</h2>
+      <div class="sheen-line w-24 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
+      <!-- Basic -->
+      <div class="price-card fade-up rounded-3xl border border-white/10 bg-charcoal p-8 flex flex-col">
+        <h3 class="font-display font-bold text-xl">Basic Wash</h3>
+        <p class="text-sm text-mist mt-1 mb-6">A quick, quality refresh</p>
+        <div class="font-display font-bold text-5xl mb-6">€10</div>
+        <ul class="space-y-3 text-sm text-mist mb-8 flex-1">
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Exterior Wash</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Tyres Cleaned</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Windows Cleaned</li>
+        </ul>
+        <a href="#booking" class="text-center rounded-full border border-white/15 py-3 font-display font-bold hover:border-emerald-bright hover:text-emerald-bright transition-colors">Choose Basic</a>
+      </div>
+
+      <!-- Premium (highlighted) -->
+      <div class="price-card fade-up relative rounded-3xl border-2 border-emerald-bright bg-gradient-to-b from-slate to-charcoal p-8 flex flex-col shadow-glow md:-translate-y-4">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-bright text-ink text-xs font-display font-bold px-4 py-1.5 rounded-full whitespace-nowrap">MOST POPULAR</span>
+        <h3 class="font-display font-bold text-xl mt-2">Premium Wash</h3>
+        <p class="text-sm text-mist mt-1 mb-6">Our most-loved package</p>
+        <div class="font-display font-bold text-5xl mb-6 text-gradient">€20</div>
+        <ul class="space-y-3 text-sm text-mist mb-8 flex-1">
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Wash &amp; Wax</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Tyres Cleaned &amp; Dressed</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Interior Vacuum</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Windows Cleaned</li>
+        </ul>
+        <a href="#booking" class="text-center rounded-full bg-emerald-bright text-ink py-3 font-display font-bold hover:bg-white transition-colors">Choose Premium</a>
+      </div>
+
+      <!-- Full Valet -->
+      <div class="price-card fade-up rounded-3xl border border-white/10 bg-charcoal p-8 flex flex-col">
+        <h3 class="font-display font-bold text-xl">Full Valet</h3>
+        <p class="text-sm text-mist mt-1 mb-6">The complete transformation</p>
+        <div class="font-display font-bold text-5xl mb-6">€60</div>
+        <ul class="space-y-3 text-sm text-mist mb-8 flex-1">
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Interior Deep Clean</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Exterior Wash &amp; Wax</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Dashboard Polish</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-bright"></i> Windows &amp; Tyres</li>
+        </ul>
+        <a href="#booking" class="text-center rounded-full border border-white/15 py-3 font-display font-bold hover:border-emerald-bright hover:text-emerald-bright transition-colors">Choose Full Valet</a>
+      </div>
+    </div>
+    <p class="text-center text-xs text-mist mt-8">Prices may vary by vehicle size. Ask our team for a large vehicle or van quote.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="relative py-24 md:py-32 bg-charcoal overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Why Choose Us</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">The Attended Sponge difference</h2>
+      <div class="sheen-line w-24 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Premium Products</h3><p class="text-sm text-mist">Only professional-grade chemicals and wax touch your car.</p></div>
+      </div>
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Attention to Detail</h3><p class="text-sm text-mist">Every edge, vent, and panel checked before you drive off.</p></div>
+      </div>
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Fast Service</h3><p class="text-sm text-mist">In and out without sacrificing quality — we respect your time.</p></div>
+      </div>
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Affordable Prices</h3><p class="text-sm text-mist">Premium results, honest Dublin pricing — no hidden fees.</p></div>
+      </div>
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Friendly Staff</h3><p class="text-sm text-mist">A local team who remember your car and how you like it done.</p></div>
+      </div>
+      <div class="fade-up glass rounded-2xl p-7 flex items-start gap-4">
+        <i class="fa-solid fa-circle-check text-emerald-bright text-2xl"></i>
+        <div><h3 class="font-display font-bold mb-1">Open 7 Days</h3><p class="text-sm text-mist">Every day, 9:00 AM – 6:00 PM. No appointment required.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Results</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Before &amp; after gallery</h2>
+      <div class="sheen-line w-24 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="galleryGrid">
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Freshly washed car exterior, glossy finish" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=600&q=80" alt="Interior valeting, clean vacuumed seats" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80" alt="Detailer polishing car bonnet" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Foam wash bucket and sponge on car exterior" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="Car detailing close up, shining paintwork" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=600&q=80" alt="Car wash in progress with hose and foam" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Luxury car finished and shining after valet" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+      <button class="gallery-item fade-up rounded-2xl relative group" data-full="https://images.unsplash.com/photo-1547038577-da80abbc4f19?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1547038577-da80abbc4f19?auto=format&fit=crop&w=600&q=80" alt="Luxury car at night with glossy reflection" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <span class="absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <span class="text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-[70] hidden items-center justify-center p-6">
+  <button id="lightboxClose" aria-label="Close" class="absolute top-6 right-6 text-white text-3xl hover:text-emerald-bright transition-colors"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightboxImg" src="" alt="Enlarged gallery image" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl">
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews" class="relative py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-6 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Reviews</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Trusted by drivers across Dublin</h2>
+    </div>
+    <div class="flex items-center justify-center gap-3 mb-16 fade-up">
+      <div class="text-emerald-bright text-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+      <span class="font-display font-bold text-lg">4.8/5</span>
+      <span class="text-mist text-sm">from 180+ reviews</span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"Best hand wash I've found in Dublin. My car looked showroom-fresh — genuinely careful with the paintwork."</p>
+        <p class="font-display font-bold text-sm">Conor M.</p>
+      </div>
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"Full Valet was worth every euro. Interior looked brand new, and the lads were so friendly the whole time."</p>
+        <p class="font-display font-bold text-sm">Aoife R.</p>
+      </div>
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"I get my taxi done here weekly. Quick, consistent, and always spotless before my shift."</p>
+        <p class="font-display font-bold text-sm">Dara K.</p>
+      </div>
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"Ceramic protection has kept my car looking glossy for months. Highly recommend for the money."</p>
+        <p class="font-display font-bold text-sm">Sarah L.</p>
+      </div>
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"Great value premium wash. In and out in 20 minutes and the wax finish is noticeably better than elsewhere."</p>
+        <p class="font-display font-bold text-sm">Michael B.</p>
+      </div>
+      <div class="review-card fade-up rounded-2xl border border-white/10 bg-slate/50 p-6">
+        <div class="text-emerald-bright mb-3">★★★★★</div>
+        <p class="text-sm text-mist leading-relaxed mb-4">"Genuinely attentive team — they pointed out a scratch I hadn't noticed and treated the car with real care."</p>
+        <p class="font-display font-bold text-sm">Emma D.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="relative py-24 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 md:px-8">
+    <div class="text-center mb-14 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">FAQ</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Common questions</h2>
+    </div>
+
+    <div class="space-y-4" id="faqList">
+      <div class="fade-up border border-white/10 rounded-2xl overflow-hidden bg-charcoal">
+        <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-display font-semibold">
+          Do I need to book in advance?
+          <i class="fa-solid fa-chevron-down text-emerald-bright transition-transform"></i>
+        </button>
+        <div class="accordion-content px-6 text-sm text-mist leading-relaxed">
+          <p class="pb-5">No appointment is necessary — we welcome walk-ins every day. If you'd like a guaranteed time slot, especially for a Full Valet or Ceramic Protection, we recommend booking ahead using our form or by phone.</p>
+        </div>
+      </div>
+      <div class="fade-up border border-white/10 rounded-2xl overflow-hidden bg-charcoal">
+        <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-display font-semibold">
+          How long does a wash take?
+          <i class="fa-solid fa-chevron-down text-emerald-bright transition-transform"></i>
+        </button>
+        <div class="accordion-content px-6 text-sm text-mist leading-relaxed">
+          <p class="pb-5">A Basic Wash takes about 10–15 minutes. A Premium Wash typically takes 20–25 minutes, and a Full Valet is around 60–90 minutes depending on your vehicle's condition and size.</p>
+        </div>
+      </div>
+      <div class="fade-up border border-white/10 rounded-2xl overflow-hidden bg-charcoal">
+        <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-display font-semibold">
+          Is it safe for my car's paintwork?
+          <i class="fa-solid fa-chevron-down text-emerald-bright transition-transform"></i>
+        </button>
+        <div class="accordion-content px-6 text-sm text-mist leading-relaxed">
+          <p class="pb-5">Yes. Every wash is done entirely by hand using soft microfibre mitts and scratch-free techniques — we never use harsh automated brushes that can swirl or damage paint.</p>
+        </div>
+      </div>
+      <div class="fade-up border border-white/10 rounded-2xl overflow-hidden bg-charcoal">
+        <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-display font-semibold">
+          Do you offer ceramic coating for all vehicles?
+          <i class="fa-solid fa-chevron-down text-emerald-bright transition-transform"></i>
+        </button>
+        <div class="accordion-content px-6 text-sm text-mist leading-relaxed">
+          <p class="pb-5">Yes, ceramic protection is available for cars, SUVs, and vans. Pricing depends on vehicle size and paint condition — give us a call for an accurate quote.</p>
+        </div>
+      </div>
+      <div class="fade-up border border-white/10 rounded-2xl overflow-hidden bg-charcoal">
+        <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-display font-semibold">
+          What payment methods do you accept?
+          <i class="fa-solid fa-chevron-down text-emerald-bright transition-transform"></i>
+        </button>
+        <div class="accordion-content px-6 text-sm text-mist leading-relaxed">
+          <p class="pb-5">We accept cash and all major cards. Contactless and mobile payments are also welcome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS + BOOKING -->
+<section id="booking" class="relative py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14">
+
+    <!-- Hours -->
+    <div class="fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Opening Hours</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-8">Open every day of the week</h2>
+
+      <div class="glass rounded-2xl p-8 flex items-center justify-between mb-8">
+        <div>
+          <p class="font-display font-bold text-lg">Monday – Sunday</p>
+          <p class="text-mist text-sm mt-1">No appointment needed</p>
+        </div>
+        <div class="text-right">
+          <p class="font-display font-bold text-2xl text-emerald-bright">9:00 AM</p>
+          <p class="text-mist text-sm">– 6:00 PM</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-white/10">
+        <table class="w-full text-sm">
+          <tbody>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Monday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Tuesday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Wednesday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Thursday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Friday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-white/5"><td class="px-6 py-3 text-mist">Saturday</td><td class="px-6 py-3 text-right font-semibold">9:00 AM – 6:00 PM</td></tr>
+            <tr><td class="px-6 py-3 text-mist">Sunday</td><td class="px-6 py-3 text-right font-semibold text-emerald-bright">9:00 AM – 6:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Booking form -->
+    <div class="fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Book Your Wash</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-8">Reserve a slot in seconds</h2>
+
+      <form id="bookingForm" class="glass rounded-3xl p-8 space-y-5" novalidate>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-xs font-semibold text-mist mb-2">Full Name</label>
+            <input id="name" name="name" type="text" required placeholder="John Murphy"
+              class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm placeholder:text-mist/50 focus:border-emerald-bright transition-colors">
+          </div>
+          <div>
+            <label for="phone" class="block text-xs font-semibold text-mist mb-2">Phone Number</label>
+            <input id="phone" name="phone" type="tel" required placeholder="089 123 4567"
+              class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm placeholder:text-mist/50 focus:border-emerald-bright transition-colors">
+          </div>
+        </div>
+        <div>
+          <label for="service" class="block text-xs font-semibold text-mist mb-2">Service</label>
+          <select id="service" name="service" required class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm focus:border-emerald-bright transition-colors">
+            <option>Basic Wash — €10</option>
+            <option>Premium Wash — €20</option>
+            <option>Full Valet — €60</option>
+            <option>Ceramic Protection</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="date" class="block text-xs font-semibold text-mist mb-2">Preferred Date</label>
+            <input id="date" name="date" type="date" required class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm focus:border-emerald-bright transition-colors">
+          </div>
+          <div>
+            <label for="time" class="block text-xs font-semibold text-mist mb-2">Preferred Time</label>
+            <input id="time" name="time" type="time" required class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm focus:border-emerald-bright transition-colors">
+          </div>
+        </div>
+        <div>
+          <label for="notes" class="block text-xs font-semibold text-mist mb-2">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Vehicle type, colour, or anything we should know"
+            class="w-full rounded-xl bg-slate/60 border border-white/10 px-4 py-3 text-sm placeholder:text-mist/50 focus:border-emerald-bright transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-full bg-emerald-bright text-ink font-display font-bold py-4 hover:bg-white transition-colors shadow-glow">
+          Confirm Booking Request
+        </button>
+        <p id="formSuccess" class="hidden text-center text-sm text-emerald-bright font-semibold pt-1">
+          <i class="fa-solid fa-circle-check mr-1"></i> Thanks! We'll confirm your slot by phone shortly.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+      <span class="text-emerald-bright font-semibold tracking-widest text-xs uppercase">Visit Us</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mt-3">Find us in Greenhills, Dublin</h2>
+      <div class="sheen-line w-24 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-stretch">
+      <div class="lg:col-span-2 fade-up flex flex-col gap-6">
+        <div class="glass rounded-2xl p-6 flex items-start gap-4">
+          <i class="fa-solid fa-location-dot text-emerald-bright text-xl mt-1"></i>
+          <div>
+            <p class="font-display font-bold mb-1">Address</p>
+            <p class="text-mist text-sm">Greenhills, Dublin, Ireland</p>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex items-start gap-4">
+          <i class="fa-solid fa-phone text-emerald-bright text-xl mt-1"></i>
+          <div>
+            <p class="font-display font-bold mb-1">Phone</p>
+            <a href="tel:+353894742701" class="text-mist text-sm hover:text-emerald-bright transition-colors">+353 89 474 2701</a>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex items-start gap-4">
+          <i class="fa-solid fa-clock text-emerald-bright text-xl mt-1"></i>
+          <div>
+            <p class="font-display font-bold mb-1">Hours</p>
+            <p class="text-mist text-sm">Monday – Sunday, 9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+        <a href="tel:+353894742701" class="rounded-2xl bg-emerald-bright text-ink font-display font-bold text-center py-5 hover:bg-white transition-colors shadow-glow flex items-center justify-center gap-2 text-lg">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+      </div>
+
+      <div class="lg:col-span-3 fade-up rounded-3xl overflow-hidden border border-white/10 min-h-[380px]">
+        <iframe
+          title="Attended Sponge Car Wash location map — Greenhills, Dublin"
+          src="https://maps.google.com/maps?q=Greenhills%2C%20Dublin%2C%20Ireland&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full min-h-[380px] grayscale-[30%] contrast-125"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative bg-ink border-t border-white/10 pt-16 pb-28 md:pb-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="#home" class="flex items-center gap-2.5 mb-4">
+        <span class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald to-emerald-bright flex items-center justify-center">
+          <i class="fa-solid fa-car-side text-ink text-sm"></i>
+        </span>
+        <span class="font-display font-bold text-lg">ATTENDED SPONGE</span>
+      </a>
+      <p class="text-mist text-sm leading-relaxed">Premium hand car wash and valeting in Greenhills, Dublin. Scratch-free, thorough, and friendly — every visit.</p>
+    </div>
+
+    <div>
+      <p class="font-display font-bold mb-4">Quick Links</p>
+      <ul class="space-y-2 text-sm text-mist">
+        <li><a href="#services" class="hover:text-emerald-bright transition-colors">Services</a></li>
+        <li><a href="#pricing" class="hover:text-emerald-bright transition-colors">Pricing</a></li>
+        <li><a href="#gallery" class="hover:text-emerald-bright transition-colors">Gallery</a></li>
+        <li><a href="#reviews" class="hover:text-emerald-bright transition-colors">Reviews</a></li>
+        <li><a href="#booking" class="hover:text-emerald-bright transition-colors">Book Now</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-display font-bold mb-4">Contact</p>
+      <ul class="space-y-2 text-sm text-mist">
+        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-emerald-bright"></i> <a href="tel:+353894742701" class="hover:text-emerald-bright transition-colors">+353 89 474 2701</a></li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-emerald-bright"></i> Greenhills, Dublin, Ireland</li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-emerald-bright"></i> Mon – Sun, 9AM – 6PM</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-display font-bold mb-4">Follow Us</p>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:border-emerald-bright hover:text-emerald-bright transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:border-emerald-bright hover:text-emerald-bright transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/353894742701" aria-label="WhatsApp" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:border-emerald-bright hover:text-emerald-bright transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-12 pt-6 border-t border-white/5 text-center text-xs text-mist">
+    © <span id="year"></span> Attended Sponge Car Wash, Greenhills, Dublin. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // Loader
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.visibility = 'hidden';
+    }, 350);
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll progress bar
+  const progress = document.getElementById('scroll-progress');
+  function updateProgress() {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progress.style.width = scrolled + '%';
+  }
+  document.addEventListener('scroll', updateProgress);
+
+  // Sticky nav shrink + background
+  const navInner = document.getElementById('navInner');
+  const navbar = document.getElementById('navbar');
+  function updateNav() {
+    if (window.scrollY > 30) {
+      navbar.classList.add('bg-ink/80', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+    } else {
+      navbar.classList.remove('bg-ink/80', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+    }
+  }
+  document.addEventListener('scroll', updateNav);
+
+  // Back to top
+  const backToTop = document.getElementById('backToTop');
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.remove('opacity-0', 'pointer-events-none');
+      backToTop.classList.add('opacity-100');
+    } else {
+      backToTop.classList.add('opacity-0', 'pointer-events-none');
+      backToTop.classList.remove('opacity-100');
+    }
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(isHidden));
+    menuBtn.innerHTML = isHidden ? '<i class="fa-solid fa-xmark text-xl"></i>' : '<i class="fa-solid fa-bars text-xl"></i>';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimal || '0');
+        let current = 0;
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          current = target * eased;
+          el.textContent = decimals ? current.toFixed(decimals) : Math.floor(current).toLocaleString();
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = decimals ? target.toFixed(decimals) : target.toLocaleString();
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.dataset.full;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.classList.add('lightbox-open');
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.classList.remove('lightbox-open');
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = '0px');
+      document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Booking form
+  const bookingForm = document.getElementById('bookingForm');
+  const formSuccess = document.getElementById('formSuccess');
+  bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!bookingForm.checkValidity()) { bookingForm.reportValidity(); return; }
+    formSuccess.classList.remove('hidden');
+    bookingForm.querySelector('button[type="submit"]').textContent = 'Request Sent';
+    setTimeout(() => { bookingForm.reset(); }, 600);
+  });
+</script>
+
+</body>
+</html>
